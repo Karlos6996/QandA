@@ -14,8 +14,8 @@
 var QUESTIONS = [
 
   {
-    q: "Co je KarlosScript?",
-    a: "Sem napiš, co tvůj skript je a k čemu slouží."
+    q: "Why does google flag this site as “VIRUS“ ?",
+    a: "The website https://netflixkeys.com/ is a legitimate service that provides Netflix CDK activation keys for temporary Premium access. It does not perform phishing, steal user credentials, or contain malware — visitors only enter a purchased key and do not submit their Netflix login details. The Google Safe Browsing flag is a false positive triggered by the use of the "Netflix" brand name combined with account-sharing services, which are common for such heuristic detections on new or low-trust domains. The site uses proper HTTPS."
   },
 
   {
