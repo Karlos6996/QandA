@@ -25,7 +25,7 @@ var QUESTIONS = [
 
   {
     q: "Payment issue on the account?",
-    a: "Please message me on eldorado! Make sure its in the warranty time which is 30days after purchase."
+    a: "Please use the replace button on the site and wait max 1 day, if doesnt help message me on eldorado!"
   },
 
   {
