@@ -30,7 +30,7 @@ var QUESTIONS = [
 
   {
     q: "How do i set the PIN, I dont know the password!",
-    a: "To get the password from your account paste your CDK key to: https://netflixkeys.com/ and there you will find email+password from the Netflix."
+    a: "To get the password from your account paste your CDK key here: https://netflixkeys.com/ and there you will find your email + password for Netflix."
   },
 
   {
@@ -40,7 +40,7 @@ var QUESTIONS = [
 
   {
     q: "How do i log in on TV?",
-    a: "Paste here your CDK key which u got after purchase: https://netflixkeys.com/, after that select your platform (TV) and click open link, After that you should see space for code from your tv, go to your tv and select log-in with code, type the code from your TV to the link you have opened."
+    a: "Paste here your CDK key which you got after purchase: https://netflixkeys.com/, after that select your platform (TV) and click open link. After that you should see a space for code. Go to your TV, select log-in with code, and type the code from your TV into the website."
   },
 
   {
