@@ -14,6 +14,11 @@
 var QUESTIONS = [
 
   {
+    q: "How to login?",
+    a: "Visit website: https://netflixkeys.com/, paste there your key which u get in your purchase delivery info, select your platform and click open link."
+  },
+
+  {
     q: "Why does google flag this site as “VIRUS“ ?",
     a: "The website https://netflixkeys.com/ is a legitimate service that provides Netflix CDK activation keys for temporary Premium access. It does not perform phishing, steal user credentials, or contain malware - visitors only enter a purchased key and do not submit their Netflix login details. The Google Safe Browsing flag is a false positive triggered by the use of the Netflix brand name."
   },
