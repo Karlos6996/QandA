@@ -743,21 +743,52 @@
 <span class="chip">Netflix CDK</span>
 </div>
 
-<div class="video-block">
-  <div class="video-label">
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-    PC login walkthrough
-  </div>
-  <div class="video-frame">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/jooxYrhvnas"
-      title="Netflix PC login walkthrough"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen></iframe>
-  </div>
+<div class="device-tabs" role="tablist" aria-label="Choose your device">
+  <button class="device-tab" id="netflix-tab-pc" type="button" role="tab" aria-selected="true" aria-controls="netflix-video-pc">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+    <span>PC / Desktop</span>
+  </button>
+  <button class="device-tab" id="netflix-tab-mobile" type="button" role="tab" aria-selected="false" aria-controls="netflix-video-mobile">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+    <span>Mobile / Tablet</span>
+  </button>
 </div>
+
+<section class="device-panel active" id="netflix-video-pc" role="tabpanel" aria-labelledby="netflix-tab-pc">
+  <div class="video-block">
+    <div class="video-label">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      PC login walkthrough
+    </div>
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/jooxYrhvnas"
+        title="Netflix PC login walkthrough"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="device-panel" id="netflix-video-mobile" role="tabpanel" aria-labelledby="netflix-tab-mobile">
+  <div class="video-block">
+    <div class="video-label">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      Mobile login walkthrough
+    </div>
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/qaO-EY_ggvo"
+        title="Netflix mobile login walkthrough"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
 
 <div class="search-box">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
@@ -807,6 +838,28 @@ const NETFLIX_QUESTIONS = [
         a: "Contact the seller through Eldorado support messages."
       }
     ];
+const walkthroughTabs = [...document.querySelectorAll(".device-tab")];
+const walkthroughPanels = [...document.querySelectorAll(".device-panel")];
+
+function selectWalkthroughTab(tab) {
+  walkthroughTabs.forEach(item => item.setAttribute("aria-selected", String(item === tab)));
+  walkthroughPanels.forEach(panel => panel.classList.toggle("active", panel.id === tab.getAttribute("aria-controls")));
+}
+
+walkthroughTabs.forEach(tab => {
+  tab.addEventListener("click", () => selectWalkthroughTab(tab));
+});
+
+document.querySelector(".device-tabs").addEventListener("keydown", event => {
+  if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+  const currentIndex = walkthroughTabs.findIndex(tab => tab.getAttribute("aria-selected") === "true");
+  const nextIndex = event.key === "ArrowRight"
+    ? (currentIndex + 1) % walkthroughTabs.length
+    : (currentIndex - 1 + walkthroughTabs.length) % walkthroughTabs.length;
+  walkthroughTabs[nextIndex].focus();
+  selectWalkthroughTab(walkthroughTabs[nextIndex]);
+});
+
 const netflixList = document.getElementById("netflix-list");
 const netflixSearch = document.getElementById("netflix-search");
 const netflixCount = document.getElementById("netflix-count");
