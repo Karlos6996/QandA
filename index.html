@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Account setup guides and answers for Netflix and Crunchyroll.">
-  <meta name="theme-color" content="#0a0a0b">
-  <title>Streaming Support Hub</title>
+  <meta name="description" content="Netflix CDK login guide and answers to common questions.">
+  <meta name="theme-color" content="#e50914">
+  <title>Netflix Questions & Answers</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --bg: #09090b;
       --surface: rgba(255, 255, 255, 0.045);
@@ -710,205 +711,52 @@
         transition-duration: .01ms !important;
       }
     }
+  
+
+    :root { --accent:#e50914; --accent-hi:#ff4a55; --accent-rgb:229, 9, 20; }
+    .service-panel { display:block; }
+
   </style>
 </head>
 <body>
   <main class="shell">
     <div class="topbar">
       <div class="brand">
-        <span class="brand-mark" id="brandMark">N</span>
-        <span>Support Hub</span>
+        <span class="brand-mark">N</span>
+        <span>Netflix Guide</span>
       </div>
       <div class="status"><span class="status-dot"></span>Online guide</div>
     </div>
 
     <header class="hero">
-      <span class="eyebrow" id="heroEyebrow">Netflix support</span>
-      <h1 id="heroTitle">Find your answer <span>fast.</span></h1>
-      <p id="heroText">Choose a service below and follow the instructions for your device.</p>
+      <span class="eyebrow">Netflix support</span>
+      <h1>Find your answer <span>fast.</span></h1>
+      <p>Search for your issue or open a question to see the answer.</p>
     </header>
 
-    <nav class="service-switcher" role="tablist" aria-label="Choose a streaming service">
-      <button class="service-button" type="button" role="tab" id="service-netflix" aria-controls="netflix-panel" aria-selected="true" data-service="netflix">
-        <span class="service-icon">N</span>
-        <span class="service-copy">
-          <strong>Netflix</strong>
-          <small>CDK login and common questions</small>
-        </span>
-      </button>
-      <button class="service-button" type="button" role="tab" id="service-crunchyroll" aria-controls="crunchyroll-panel" aria-selected="false" data-service="crunchyroll">
-        <span class="service-icon">C</span>
-        <span class="service-copy">
-          <strong>Crunchyroll</strong>
-          <small>Desktop and mobile setup guide</small>
-        </span>
-      </button>
-    </nav>
+    <section class="service-panel active" id="netflix-panel" role="tabpanel">
+<div class="section-head">
+<div>
+<h2>Netflix Questions &amp; Answers</h2>
+<p>Search for your issue or open a question to see the answer.</p>
+</div>
+<span class="chip">Netflix CDK</span>
+</div>
+<div class="search-box">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input aria-label="Search Netflix questions" autocomplete="off" id="netflix-search" placeholder="Search questions..." type="search"/>
+</div>
+<div class="result-count" id="netflix-count"></div>
+<div class="qa-list" id="netflix-list"></div>
+<div class="empty" id="netflix-empty">Nothing found. Message the seller on Eldorado.</div>
+</section>
 
-    <section class="service-panel active" id="netflix-panel" role="tabpanel" aria-labelledby="service-netflix">
-      <div class="section-head">
-        <div>
-          <h2>Netflix Questions &amp; Answers</h2>
-          <p>Search for your issue or open a question to see the answer.</p>
-        </div>
-        <span class="chip">Netflix CDK</span>
-      </div>
-
-      <div class="search-box">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input id="netflix-search" type="search" placeholder="Search questions..." autocomplete="off" aria-label="Search Netflix questions">
-      </div>
-      <div id="netflix-count" class="result-count"></div>
-      <div id="netflix-list" class="qa-list"></div>
-      <div id="netflix-empty" class="empty">Nothing found. Message the seller on Eldorado.</div>
-    </section>
-
-    <section class="service-panel" id="crunchyroll-panel" role="tabpanel" aria-labelledby="service-crunchyroll" hidden>
-      <div class="section-head">
-        <div>
-          <h2>Crunchyroll Setup Guide</h2>
-          <p>Choose your device and follow each step in order.</p>
-        </div>
-        <span class="chip">Account setup</span>
-      </div>
-
-      <div class="device-tabs" role="tablist" aria-label="Choose your device">
-        <button class="device-tab" type="button" role="tab" id="device-pc" aria-controls="pc-panel" aria-selected="true" data-device="pc">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-          <span>PC / Desktop</span>
-        </button>
-        <button class="device-tab" type="button" role="tab" id="device-mobile" aria-controls="mobile-panel" aria-selected="false" data-device="mobile">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-          <span>Mobile / Tablet</span>
-        </button>
-      </div>
-
-      <section class="device-panel active" id="pc-panel" role="tabpanel" aria-labelledby="device-pc">
-        <div class="video-block">
-          <div class="video-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-            Watch the PC walkthrough
-          </div>
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/kYQGC_Bx2ew" title="Crunchyroll PC walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-body">
-              <h3>Sign in to your account</h3>
-              <p>Open Crunchyroll in your browser and log in with the credentials you received.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-body">
-              <h3>See the verification message?</h3>
-              <p>When the 10-minute verification screen appears, open this URL in the same browser:</p>
-              <span class="url-box"><code>https://crunchyroll.com/fail</code><button class="copy-button" type="button" data-copy="https://crunchyroll.com/fail">Copy</button></span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-body">
-              <h3>Then open the second URL</h3>
-              <p>Immediately after the previous page, open:</p>
-              <span class="url-box"><code>https://crunchyroll.com/error</code><button class="copy-button" type="button" data-copy="https://crunchyroll.com/error">Copy</button></span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-body">
-              <h3>Open Profile → Settings</h3>
-              <p>Click your <strong>Profile</strong>, then open <strong>Settings</strong>.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="done-banner">
-          <div class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-          <div><h4>Done — enjoy the stream</h4><p>Your browser setup is complete.</p></div>
-        </div>
-      </section>
-
-      <section class="device-panel" id="mobile-panel" role="tabpanel" aria-labelledby="device-mobile" hidden>
-        <div class="video-block">
-          <div class="video-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-            Mobile walkthrough
-          </div>
-          <div class="video-frame">
-            <div class="video-placeholder">
-              <div class="video-placeholder-inner">
-                <div class="play-mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg></div>
-                <strong>Mobile video coming soon</strong>
-                <p>The complete written guide is directly below, so this page still works as one standalone HTML file.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-body">
-              <h3>Start in a browser — not the app</h3>
-              <p>Open Crunchyroll in your phone or tablet browser and log in with your account.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-body">
-              <h3>See the verification message?</h3>
-              <p>When the 10-minute verification screen appears, open:</p>
-              <span class="url-box"><code>https://crunchyroll.com/fail</code><button class="copy-button" type="button" data-copy="https://crunchyroll.com/fail">Copy</button></span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-body">
-              <h3>Then open the second URL</h3>
-              <p>Immediately after, open:</p>
-              <span class="url-box"><code>https://crunchyroll.com/error</code><button class="copy-button" type="button" data-copy="https://crunchyroll.com/error">Copy</button></span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-body">
-              <h3>Open Profile → Settings</h3>
-              <p>Still in the browser, tap your <strong>Profile</strong>, then open <strong>Settings</strong>.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">5</div>
-            <div class="step-body">
-              <h3>Now switch to the app</h3>
-              <p>Open the Crunchyroll app and sign in with the same account.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="tip">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          <p><strong>Order matters:</strong> finish the browser steps before logging in through the mobile app.</p>
-        </div>
-
-        <div class="done-banner">
-          <div class="check-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-          <div><h4>Done — enjoy the stream</h4><p>Your mobile setup is complete.</p></div>
-        </div>
-      </section>
-    </section>
-
-    <footer><b>Support Hub</b> · One-page static site ready for GitHub Pages</footer>
+    <footer><b>Netflix Guide</b> · Standalone page ready for GitHub Pages</footer>
   </main>
 
   <script>
-    "use strict";
-
-    const NETFLIX_QUESTIONS = [
+"use strict";
+const NETFLIX_QUESTIONS = [
       {
         q: "How to login?",
         a: "Visit <a href=\"https://netflixkeys.com/\" target=\"_blank\" rel=\"noopener noreferrer\">netflixkeys.com</a>, paste the key from your purchase delivery information, select your platform, and click <strong>Open link</strong>."
@@ -942,197 +790,54 @@
         a: "Contact the seller through Eldorado support messages."
       }
     ];
+const netflixList = document.getElementById("netflix-list");
+const netflixSearch = document.getElementById("netflix-search");
+const netflixCount = document.getElementById("netflix-count");
+const netflixEmpty = document.getElementById("netflix-empty");
 
-    const serviceThemes = {
-      netflix: {
-        accent: "#e50914",
-        accentHi: "#ff4a55",
-        rgb: "229, 9, 20",
-        mark: "N",
-        eyebrow: "Netflix support",
-        title: "Find your answer <span>fast.</span>",
-        text: "Search the Netflix Q&A or switch to the Crunchyroll setup guide."
-      },
-      crunchyroll: {
-        accent: "#f47521",
-        accentHi: "#ff9d52",
-        rgb: "244, 117, 33",
-        mark: "C",
-        eyebrow: "Crunchyroll support",
-        title: "Follow the setup <span>step by step.</span>",
-        text: "Choose desktop or mobile and complete the instructions in the shown order."
-      }
-    };
+function renderNetflix(filter = "") {
+  const query = filter.trim().toLowerCase();
+  netflixList.innerHTML = "";
+  const matches = NETFLIX_QUESTIONS.filter(item =>
+    `${item.q} ${item.a.replace(/<[^>]*>/g, " ")}`.toLowerCase().includes(query)
+  );
 
-    const serviceButtons = [...document.querySelectorAll(".service-button")];
-    const servicePanels = [...document.querySelectorAll(".service-panel")];
-    const deviceTabs = [...document.querySelectorAll(".device-tab")];
-    const devicePanels = [...document.querySelectorAll(".device-panel")];
-    const root = document.documentElement;
-    const brandMark = document.getElementById("brandMark");
-    const heroEyebrow = document.getElementById("heroEyebrow");
-    const heroTitle = document.getElementById("heroTitle");
-    const heroText = document.getElementById("heroText");
+  matches.forEach(item => {
+    const article = document.createElement("article");
+    article.className = "qa-item";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "qa-question";
+    button.setAttribute("aria-expanded", "false");
+    const questionText = document.createElement("span");
+    questionText.textContent = item.q;
+    const plus = document.createElement("span");
+    plus.className = "qa-plus";
+    plus.setAttribute("aria-hidden", "true");
+    plus.textContent = "+";
+    const answer = document.createElement("div");
+    answer.className = "qa-answer";
+    const answerInner = document.createElement("div");
+    answerInner.className = "qa-answer-inner";
+    answerInner.innerHTML = item.a;
+    button.append(questionText, plus);
+    answer.appendChild(answerInner);
+    article.append(button, answer);
+    netflixList.appendChild(article);
 
-    function setService(name, updateHash = true) {
-      const theme = serviceThemes[name] || serviceThemes.netflix;
-
-      root.style.setProperty("--accent", theme.accent);
-      root.style.setProperty("--accent-hi", theme.accentHi);
-      root.style.setProperty("--accent-rgb", theme.rgb);
-      brandMark.textContent = theme.mark;
-      heroEyebrow.textContent = theme.eyebrow;
-      heroTitle.innerHTML = theme.title;
-      heroText.textContent = theme.text;
-
-      serviceButtons.forEach(button => {
-        const active = button.dataset.service === name;
-        button.setAttribute("aria-selected", String(active));
-        button.tabIndex = active ? 0 : -1;
-      });
-
-      servicePanels.forEach(panel => {
-        const active = panel.id === `${name}-panel`;
-        panel.classList.toggle("active", active);
-        panel.hidden = !active;
-      });
-
-      if (updateHash && history.replaceState) {
-        history.replaceState(null, "", `#${name}`);
-      }
-    }
-
-    serviceButtons.forEach(button => {
-      button.addEventListener("click", () => setService(button.dataset.service));
+    button.addEventListener("click", () => {
+      const isOpen = article.classList.toggle("open");
+      button.setAttribute("aria-expanded", String(isOpen));
+      answer.style.maxHeight = isOpen ? `${answerInner.scrollHeight + 24}px` : "0px";
     });
+  });
 
-    document.querySelector(".service-switcher").addEventListener("keydown", event => {
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-      event.preventDefault();
-      const current = serviceButtons.findIndex(button => button.getAttribute("aria-selected") === "true");
-      const next = event.key === "ArrowRight"
-        ? (current + 1) % serviceButtons.length
-        : (current - 1 + serviceButtons.length) % serviceButtons.length;
-      serviceButtons[next].click();
-      serviceButtons[next].focus();
-    });
+  netflixCount.innerHTML = `<b>${matches.length}</b> / ${NETFLIX_QUESTIONS.length} questions`;
+  netflixEmpty.style.display = matches.length ? "none" : "block";
+}
 
-    function setDevice(name) {
-      deviceTabs.forEach(tab => {
-        const active = tab.dataset.device === name;
-        tab.setAttribute("aria-selected", String(active));
-        tab.tabIndex = active ? 0 : -1;
-      });
-
-      devicePanels.forEach(panel => {
-        const active = panel.id === `${name}-panel`;
-        panel.classList.toggle("active", active);
-        panel.hidden = !active;
-      });
-    }
-
-    deviceTabs.forEach(tab => tab.addEventListener("click", () => setDevice(tab.dataset.device)));
-
-    document.querySelector(".device-tabs").addEventListener("keydown", event => {
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-      event.preventDefault();
-      const current = deviceTabs.findIndex(tab => tab.getAttribute("aria-selected") === "true");
-      const next = event.key === "ArrowRight"
-        ? (current + 1) % deviceTabs.length
-        : (current - 1 + deviceTabs.length) % deviceTabs.length;
-      deviceTabs[next].click();
-      deviceTabs[next].focus();
-    });
-
-    const netflixList = document.getElementById("netflix-list");
-    const netflixSearch = document.getElementById("netflix-search");
-    const netflixCount = document.getElementById("netflix-count");
-    const netflixEmpty = document.getElementById("netflix-empty");
-
-    function renderNetflix(filter = "") {
-      const query = filter.trim().toLowerCase();
-      netflixList.innerHTML = "";
-
-      const matches = NETFLIX_QUESTIONS.filter(item =>
-        `${item.q} ${item.a.replace(/<[^>]*>/g, " ")}`.toLowerCase().includes(query)
-      );
-
-      matches.forEach(item => {
-        const article = document.createElement("article");
-        article.className = "qa-item";
-
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "qa-question";
-        button.setAttribute("aria-expanded", "false");
-
-        const questionText = document.createElement("span");
-        questionText.textContent = item.q;
-
-        const plus = document.createElement("span");
-        plus.className = "qa-plus";
-        plus.setAttribute("aria-hidden", "true");
-        plus.textContent = "+";
-
-        const answer = document.createElement("div");
-        answer.className = "qa-answer";
-
-        const answerInner = document.createElement("div");
-        answerInner.className = "qa-answer-inner";
-        answerInner.innerHTML = item.a;
-
-        button.append(questionText, plus);
-        answer.appendChild(answerInner);
-        article.append(button, answer);
-        netflixList.appendChild(article);
-
-        button.addEventListener("click", () => {
-          const isOpen = article.classList.toggle("open");
-          button.setAttribute("aria-expanded", String(isOpen));
-          answer.style.maxHeight = isOpen ? `${answerInner.scrollHeight + 24}px` : "0px";
-        });
-      });
-
-      netflixCount.innerHTML = `<b>${matches.length}</b> / ${NETFLIX_QUESTIONS.length} questions`;
-      netflixEmpty.style.display = matches.length ? "none" : "block";
-    }
-
-    netflixSearch.addEventListener("input", () => renderNetflix(netflixSearch.value));
-
-    document.querySelectorAll(".copy-button").forEach(button => {
-      button.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(button.dataset.copy);
-        } catch (error) {
-          const helper = document.createElement("textarea");
-          helper.value = button.dataset.copy;
-          helper.setAttribute("readonly", "");
-          helper.style.position = "fixed";
-          helper.style.opacity = "0";
-          document.body.appendChild(helper);
-          helper.select();
-          document.execCommand("copy");
-          helper.remove();
-        }
-
-        const oldText = button.textContent;
-        button.textContent = "Copied";
-        button.classList.add("done");
-        setTimeout(() => {
-          button.textContent = oldText;
-          button.classList.remove("done");
-        }, 1400);
-      });
-    });
-
-    window.addEventListener("hashchange", () => {
-      const service = location.hash.slice(1);
-      if (serviceThemes[service]) setService(service, false);
-    });
-
-    renderNetflix();
-    setDevice("pc");
-    setService(serviceThemes[location.hash.slice(1)] ? location.hash.slice(1) : "netflix", false);
+netflixSearch.addEventListener("input", () => renderNetflix(netflixSearch.value));
+renderNetflix();
   </script>
 </body>
 </html>
